@@ -6,7 +6,8 @@ public class NumbersExercise {
 		// TODO Auto-generated method stub
 		System.out.println(sum(20));
 		// System.out.println(returnStringRepresentation(33));
-		numbersToWords(99);
+		System.out.println("test");
+		numbersToWords(9999);
 	}
 
 	public static int sum(int num) {
@@ -46,90 +47,32 @@ public class NumbersExercise {
 		String[] numNames = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
 				"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 		String word = "";
-		if (num == 11) {
-			word += numNames[10];
-			num -= 11;
-		} else if (num == 12) {
-			word += numNames[11];
-			num -= 12;
-		} else if (num == 13) {
-			word += numNames[12];
-			num -= 13;
-		} else if (num == 14) {
-			word += numNames[13];
-			num -= 14;
-		} else if (num == 15) {
-			word += numNames[14];
-			num -= 15;
-		} else if (num == 16) {
-			word += numNames[15];
-			num -= 16;
-		} else if (num == 17) {
-			word += numNames[16];
-			num -= 17;
-		} else if (num == 18) {
-			word += numNames[17];
-			num -= 18;
-		} else if (num == 19) {
-			word += numNames[18];
-			num -= 19;
+		int numNew = 0;
+		if (num >= 11 && num <= 19) {
+			word += numNames[num - 1];
+			num -= num;
 		}
 
 		while (num > 0) {
-			if (num / 10 == 9) {
-				word += tensNames[8];
-				num -= 90;
-			} else if (num / 10 == 8) {
-				word += tensNames[7];
-				num -= 80;
-			} else if (num / 10 == 7) {
-				word += tensNames[6];
-				num -= 70;
-			} else if (num / 10 == 6) {
-				word += tensNames[5];
-				num -= 60;
-			} else if (num / 10 == 5) {
-				word += tensNames[4];
-				num -= 50;
-			} else if (num / 10 == 4) {
-				word += tensNames[3];
-				num -= 40;
-			} else if (num / 10 == 3) {
-				word += tensNames[2];
-				num -= 30;
-			} else if (num / 10 == 2) {
-				word += tensNames[1];
-				num -= 20;
-			} else if (num / 10 == 1) {
-				word += tensNames[0];
-				num -= 10;
-			} else if (num % 10 == 9) {
-				word += numNames[8];
-				num -= 9;
-			} else if (num % 10 == 8) {
-				word += numNames[7];
-				num -= 8;
-			} else if (num % 10 == 7) {
-				word += numNames[6];
-				num -= 7;
-			} else if (num % 10 == 6) {
-				word += numNames[5];
-				num -= 6;
-			} else if (num % 10 == 5) {
-				word += numNames[4];
-				num -= 5;
-			} else if (num % 10 == 4) {
-				word += numNames[3];
-				num -= 4;
-			} else if (num % 10 == 3) {
-				word += numNames[2];
-				num -= 3;
-			} else if (num % 10 == 2) {
-				word += numNames[1];
-				num -= 2;
-			} else if (num % 10 == 1) {
-				word += numNames[0];
-				num -= 1;
+			if (num / 1000 <= 9 && num / 1000 > 0) {
+				numNew = num / 1000;
+				word += numNames[numNew - 1] + "thousand-";
+				numNew = numNew * 1000;
+				num -= numNew;
+			} else if (num / 100 <= 9 && num / 100 > 0) {
+				numNew = num / 100;
+				word += numNames[numNew - 1] + "hundred-";
+				numNew = numNew * 100;
+				num -= numNew;
+			} else if (num / 10 <= 9 && num / 10 > 0) {
+				numNew = num / 10;
+				word += tensNames[numNew - 1] + "-";
+				numNew = numNew * 10;
+				num -= numNew;
+			} else if (num % 10 <= 9 && num % 10 > 0) {
+				numNew = num % 10;
+				word += numNames[numNew - 1];
+				num -= numNew;
 			}
 
 		}
