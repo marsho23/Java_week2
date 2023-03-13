@@ -40,4 +40,67 @@ public class NumbersExercise {
 		return result;
 
 	}
+
+	public static void returnStringRepresentation2(int num) {
+		String[] tensNames = { "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+		String[] numNames = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
+				"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+		String word = "";
+		if (num / 10 == 9) {
+			word += tensNames[8];
+			num -= 90;
+		} else if (num / 10 == 8) {
+			word += tensNames[7];
+			num -= 80;
+		} else if (num / 10 == 7) {
+			word += tensNames[6];
+			num -= 70;
+		} else if (num / 10 == 6) {
+			word += tensNames[5];
+			num -= 60;
+		} else if (num / 10 == 5) {
+			word += tensNames[4];
+			num -= 50;
+		} else if (num / 10 == 4) {
+			word += tensNames[3];
+			num -= 40;
+		} else if (num / 10 == 3) {
+			word += tensNames[2];
+			num -= 30;
+		} else if (num / 10 == 2) {
+			word += tensNames[1];
+			num -= 20;
+		} else if (num / 10 == 1) {
+			word += tensNames[0];
+			num -= 10;
+		} else if (num % 10 == 9) {
+			word += numNames[8];
+			num -= 9;
+		} else if (num % 10 == 8) {
+			word += numNames[7];
+			num -= 8;
+		} else if (num % 10 == 7) {
+			word += numNames[6];
+			num -= 7;
+		} else if (num % 10 == 6) {
+			word += numNames[5];
+			num -= 6;
+		} else if (num % 10 == 5) {
+			word += numNames[4];
+			num -= 5;
+		} else if (num % 10 == 4) {
+			word += numNames[3];
+			num -= 4;
+		} else if (num % 10 == 3) {
+			word += numNames[2];
+			num -= 3;
+		} else if (num % 10 == 2) {
+			word += numNames[1];
+			num -= 2;
+		} else if (num % 10 == 1) {
+			word += numNames[0];
+			num -= 1;
+		}
+
+	}
 }
